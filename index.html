@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- Metadatos agregados para el SEO -->
+        <meta
+            name="description"
+            content="Página de inicio de Muy Pro Kids. Es un sitio creado para mostrar las diferentes actividades informáticas
+        que pueden realizarse en familia."
+        />
+        <meta name="keywords" content="niños, programación, animaciones, dibujos 3D, videojuegos" />
+        <!-- TITULO -->
+        <title>Home - Muy Pro Kids</title>
+
+        <!-- Hoja de estilos propios - Generados por SASS -->
+        <link rel="stylesheet" href="./assets/css/style.css" />
+
+        <!-- CSS -- Se enlaza bootstrap y fuentes de googlefonts -->
+
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+            crossorigin="anonymous"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Share:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+
+    <body class="body body__index d-flex flex-column justify-content-between">
+        <!--Menú desplegable para navegación, responsivo, disponible en todas las páginas-->
+        <div>
+            <header class="bg_gradient sticky-top">
+                <nav class="navbar navbar-expand-sm navbar-dark">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#">
+                            <img width="30" height="30" alt="" src="./img/MPK_cara_02.svg" alt="Muy Pro Kids" />
+                        </a>
+                        <button
+                            class="navbar-toggler"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#navbarNav"
+                            aria-controls="navbarSupportedContent"
+                            aria-expanded="false"
+                            aria-label="Toggle navigation"
+                        >
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse header__menu" id="navbarNav">
+                            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                                <li class="nav-item"><a class="nav-link text-light" href="index.html">Inicio</a></li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Actividades</a>
+                                    <!-- contiene los enlaces a los diferentes artículos dentro de la otra pagina -->
+                                    <ul class="dropdown-menu bg_gradient" aria-labelledby="navbarDropdown">
+                                        <li>
+                                            <a class="dropdown-item fs-3 text-light" href="./web-construccion.html">Dibujos y animaciones</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item fs-3 text-light" href="./web-construccion.html">Stop Motion</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item fs-3 text-light" href="./web-construccion.html">Aprendiendo a programar jugando</a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li class="nav-item"><a class="nav-link text-light" href="./web-construccion.html">Contacto</a></li>
+                                <li class="nav-item"><a class="nav-link text-light" href="./web-construccion.html">Sobre Nosotros</a></li>
+                                <li class="nav-item"><a class="nav-link text-light" href="./nueva_entrada.html">Blog</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            <br />
+            <section class="container">
+                <h1 class="section1__title fw-bold">BIENVENIDOS A MUY PRO KIDS</h1>
+                <div class="container text-align-right of_hidden">
+                    <img class="img-fluid img_fondo" src="./img/foco-trans-01.png" alt="Foto bienvenida" />
+                </div>
+                <h2 class="section1__subtitle fw-bold">El sitio donde la familia y la tecnología se alían</h2>
+                <article class="col-md-6" id="bienvenida">
+                    <div>
+                        <p class="section1__paragraph fw-bold">
+                            ¿Les gusta la informática y quieren compartirla con sus hijos? ¿Les gustaría que sea más productivo que sólo ver videos de internet y jugar algunos videojuegos? Pues
+                            bienvenidos al lugar ideal para toda la familia. <br />
+                            Muy Pro Kids es un sitio pensado para que padres e hijos entusiastas de la informática y el arte digital puedan conocer las diferentes actividades que se pueden realizar en
+                            el entorno digital. Seguramente ya conocen algunas, o se están iniciando, y desde aquí buscamos ayudarlos a decidir, acompañarlos en el proceso de aprendizaje y mantenerlos
+                            actualizados con las últimas novedades. En nuestras diferentes secciones encontrarán contenido sobre actividades como programación, dibujo y animación digital o películas
+                            en stop motion, que alguna vez fueron exclusivas para profesionales pero hoy en día se pueden aprender de las formas más variadas y divertidas. <br />
+                            Así que ¡Vamos! ¡comencemos esta emocionante aventura!
+                        </p>
+                    </div>
+                </article>
+            </section>
+
+            <!--PIE con información de redes y contacto, disponible en todas las páginas-->
+        </div>
+
+        <footer class="bg_gradient container-fluid">
+            <ul class="navbar d-flex justify-content-center">
+                <li class="nav-item"><a class="nav-link text-light" href="#">Contacto</a></li>
+                <li class="nav-item"><a class="nav-link text-light" href="#">Partners</a></li>
+                <li class="nav-item"><a class="nav-link text-light" href="#">Politica de Privacidad</a></li>
+            </ul>
+        </footer>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>

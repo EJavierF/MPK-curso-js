@@ -1,0 +1,202 @@
+* {
+  padding: 0px;
+  margin: 0px; }
+
+html {
+  font-size: 62.5%; }
+
+a {
+  text-decoration: none; }
+
+ul,
+ol {
+  list-style: none; }
+
+.body {
+  font-size: 1.6rem;
+  min-height: 100vh; }
+
+.bg_gradient {
+  background-image: linear-gradient(to right, #f34179, #911ed3); }
+
+@media (min-width: 768px) {
+  .body__index {
+    background-position: right; } }
+
+@media (min-width: 578px) {
+  .img_fondo {
+    display: none; }
+  .body__index {
+    background-image: url(../../img/foco-trans-01.png);
+    background-position: center; }
+  .header__menu {
+    padding: auto;
+    width: 100%;
+    font-family: share;
+    font-size: 1.8rem; }
+    .header__menu ul {
+      height: 100%;
+      padding: auto;
+      display: flex;
+      flex-direction: row;
+      align-items: center; }
+    .header__menu li a {
+      background-color: none;
+      text-decoration: none;
+      padding: 0.9rem 1.5rem;
+      display: block;
+      border-radius: 2.5pt; }
+    .header__menu li a:hover {
+      background-color: #f34179; }
+    .header__menu li ul {
+      display: none;
+      position: absolute; }
+    .header__menu li:hover > ul {
+      display: block;
+      height: auto;
+      z-index: 300;
+      background-image: linear-gradient(to right, #ee24e4, #a424ee); } }
+
+.section1__title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #4b1078;
+  font-family: "share";
+  margin: 3rem; }
+
+.section1__subtitle {
+  font-size: 2.2rem;
+  color: #4b1078;
+  font-family: "share"; }
+  .section1__subtitle--center {
+    text-align: center; }
+
+.section1__paragraph {
+  font-family: "roboto";
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #115077;
+  padding-right: 2rem;
+  text-align: justify; }
+
+.section1__img--midsize {
+  max-width: 20rem;
+  max-height: 120rem; }
+
+@media (min-width: 578px) {
+  .section1__title {
+    font-size: 3.5rem;
+    margin: 3rem; }
+  .section1__subtitle {
+    font-size: 3.2rem; } }
+
+.construccion {
+  max-width: 500px;
+  max-height: 500px; }
+  .construccion--img {
+    object-fit: contain; }
+
+.rotaImg {
+  -webkit-animation: spin 4s linear infinite;
+  -moz-animation: spin 4s linear infinite;
+  animation: spin 4s linear infinite; }
+
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg); } }
+
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg); } }
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+.section1__form {
+  height: auto;
+  color: #4b1078;
+  font-family: "roboto";
+  margin-left: 4rem; }
+
+.form__legend {
+  font-size: 2.5rem;
+  padding: 1.5rem; }
+
+.form__label {
+  font-size: 1.8rem;
+  padding: 1rem; }
+
+.formInput__text_email {
+  width: 90%;
+  padding: 0.6rem 0.5rem;
+  margin: 0.6rem 1rem; }
+
+.formInput__textarea {
+  width: 90%;
+  height: 10rem;
+  padding: 0.6rem 0.5rem;
+  margin: 0.6rem 1rem; }
+
+.formInput__checkbox {
+  padding: 6px 5px;
+  margin: 10px 0; }
+
+.formInput__select {
+  padding: 6px 5px;
+  margin: 10px 0; }
+
+.form__button {
+  background-color: #911ed3;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  padding: 10px 40px;
+  text-decoration: none;
+  margin: 10px 10px;
+  margin-top: 25px;
+  cursor: pointer; }
+
+.card-blog {
+  border-color: #911ed3;
+  border-radius: 5px;
+  border-width: 2px;
+  transition: all 0.5s;
+  color: #115077; }
+  .card-blog:hover {
+    transform: scale(1.05); }
+
+.card-title {
+  font-family: "share";
+  font-size: 2rem;
+  color: #4b1078; }
+
+.card-text {
+  font-family: "roboto";
+  font-size: 1.4rem;
+  color: #115077;
+  text-align: justify; }
+
+.aside {
+  border-bottom: 1px solid #4b1078;
+  margin-bottom: 20px; }
+  .aside-subtitle {
+    font-size: 2.2rem;
+    color: #4b1078;
+    font-family: "share"; }
+
+.section1__form--blog {
+  height: auto;
+  color: #4b1078;
+  font-family: "roboto"; }
+
+.form__button--blog {
+  background-color: #911ed3;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  padding: 5px 20px;
+  text-decoration: none;
+  margin: 1rem 0;
+  cursor: pointer; }
