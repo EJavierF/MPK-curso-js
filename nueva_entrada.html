@@ -85,20 +85,26 @@
                             <h3 class="section1__subtitle">Agregando un nuevo artículo de blog usando la plantilla</h3>
                             <div class="mb-5">
                                 <p class="section1__paragraph col-md-9">
-                                    - Atención!! los resultados se ven por consola por el momento!! -
-                                    <br />
-                                    <br />
                                     Utiliza las plantillas para crear una nueva entrada. Deberas ingresar los títulos, textos e imágenes (o videos) en los lugares correspondientes y a herramienta
                                     creará el nuevo artículo listo para publicar.
                                 </p>
                                 <h3 class="section1__paragraph mb-2">Ejemplo:</h3>
                                 <img src="./img/blog_ejemplo.PNG" alt="Ejemplo de artículo terminado" class="col-12 col-sm-10 col-md-8" />
                             </div>
-                            <div class="mb-5">
-                                <p class="section1__paragraph col-md-9">
-                                    El contenido ubicado a la izquierda es lo que debes ingresar, las listas que se ven a la derecha se actualizarán automáticamente
-                                </p>
-                            </div>
+                            <form action="" class="section1__form--blog">
+                                <fieldset>
+                                    <div>
+                                        <label class="form-label" for="titulo">Déjanos tu correo y suscribite a nuestro blog!</label>
+                                        <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Título del artículo" />
+                                        <!-- lista de seleccion para tema -->
+                                        <!-- lista de seleccion para el autor -->
+                                        <label class="form-label" for="fecha">Déjanos tu correo y suscribite a nuestro blog!</label>
+                                        <input type="email" class="form-control" id="fecha" name="fecha" placeholder="AAAA-MM-DD" />
+
+                                        <input class="form__button--blog" type="submit" value="cargaNuevo" name="" id="btnCargar" />
+                                    </div>
+                                </fieldset>
+                            </form>
                         </div>
                         <div class="g-0 col-sm-4 col-md-4">
                             <aside class="aside">
