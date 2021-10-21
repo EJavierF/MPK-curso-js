@@ -91,24 +91,47 @@
                                 <h3 class="section1__paragraph mb-2">Ejemplo:</h3>
                                 <img src="./img/blog_ejemplo.PNG" alt="Ejemplo de artículo terminado" class="col-12 col-sm-10 col-md-8" />
                             </div>
-                            <form action="" class="section1__form--blog">
-                                <fieldset>
-                                    <div>
-                                        <label class="form-label" for="titulo">Déjanos tu correo y suscribite a nuestro blog!</label>
-                                        <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Título del artículo" />
+                            <form action="" class="section1__form--blog" id="form-articulo">
+                                <fieldset class="container">
+                                    <div class="col-md-8">
+                                        <div>
+                                            <label class="form-label" for="titulo">Título de la nueva entrada</label>
+                                            <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Título del artículo" />
+                                        </div>
                                         <!-- lista de seleccion para tema -->
+                                        <div>
+                                            <label class="form-label" for="autor">Autor del artículo</label>
+                                            <select class="formInput__select" name="autor" id="autor">
+                                                <option value="papa">Papá</option>
+                                                <option value="mama">Mamá</option>
+                                                <option value="niño">Niño</option>
+                                            </select>
+                                        </div>
                                         <!-- lista de seleccion para el autor -->
-                                        <label class="form-label" for="fecha">Déjanos tu correo y suscribite a nuestro blog!</label>
-                                        <input type="email" class="form-control" id="fecha" name="fecha" placeholder="AAAA-MM-DD" />
+                                        <div>
+                                            <label class="form-label" for="tema">Tema del artículo</label>
+                                            <select class="formInput__select" name="tema" id="tema">
+                                                <option value="dibujo">Dibujo digital</option>
+                                                <option value="animacion">Animaciones</option>
+                                                <option value="stopMotion">Stop Motion</option>
+                                                <option value="programacion">Programación</option>
+                                                <option value="videojuegos">Videouegos</option>
+                                            </select>
+                                        </div>
 
-                                        <input class="form__button--blog" type="submit" value="cargaNuevo" name="" id="btnCargar" />
+                                        <div>
+                                            <label class="form-label" for="fecha">Fecha de creación de la entrada</label>
+                                            <input type="text" class="form-control" id="fecha" name="fecha" placeholder="AAAA-MM-DD" />
+                                        </div>
+
+                                        <input class="form__button--blog" type="submit" value="Crear" name="" id="btnCargar" />
                                     </div>
                                 </fieldset>
                             </form>
                         </div>
                         <div class="g-0 col-sm-4 col-md-4">
                             <aside class="aside">
-                                <form action="" class="section1__form--blog">
+                                <form action="" class="section1__form--blog" id="form-subscribir">
                                     <fieldset>
                                         <div>
                                             <label class="form-label" for="emailSubs">Déjanos tu correo y suscribite a nuestro blog!</label>
@@ -121,11 +144,7 @@
                             </aside>
                             <aside class="aside">
                                 <h3 class="aside-subtitle">Últimas entradas</h3>
-                                <ul class="aside-menu">
-                                    <li><a href="#">Dibujando a Hank en 3D</a></li>
-                                    <li><a href="#">Primeras animaciones en Piskel</a></li>
-                                    <li><a href="#">Animaciones en Paint 3D</a></li>
-                                </ul>
+                                <ul class="aside-menu" id="lista-ultimas-entradas"></ul>
                             </aside>
                             <aside class="aside">
                                 <h3 class="aside-subtitle">Entradas ordenadas por tema</h3>

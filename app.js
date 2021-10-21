@@ -20,18 +20,22 @@ class articulo {
 }
 
 // funcion para solicitar al usuario que ingrese los datos de un objeto nuevo
-const crearArticulo = () => {
-    let ingTitulo = prompt("Ingresa el titulo");
-    let ingTema = prompt("Tema del cual trata el artículo:");
-    let ingAutor = prompt("Autor del artículo:");
-    let ingFecha = prompt("Fecha en formato AAAA/MM/DD:");
-    let artNuevo = new articulo(ingTitulo.toLowerCase(), ingTema.toLowerCase(), ingAutor.toLowerCase(), new Date(ingFecha));
-
-    return artNuevo;
+const crearArticulo = (artNuevo) => {
+    articulosLista.push(artNuevo);
+    localStorage.setItem("articulosLista", JSON.stringify(articulosLista));
 };
 
 //vector con lista completa de articulos
-let articulosLista = [];
+let articulosLista = JSON.parse(localStorage.getItem("articulosLista")) || [];
+
+// traigo los elementos del DOM
+const formArticulo = document.getElementById("form-articulo");
+const ingTitulo = document.getElementById("titulo");
+const ingTema = document.getElementById("tema");
+const ingAutor = document.getElementById("autor");
+const ingFecha = document.getElementById("fecha");
+const formSubscribir = document.getElementById("form-subscribir");
+const listaUltimasEntradas = document.getElementById("lista-ultimas-entradas");
 
 //funcion para listar los nombres de articulos
 const mostrarArticulos = () => {
@@ -43,19 +47,44 @@ const mostrarArticulos = () => {
 //Ordenando por fecha
 const ordenaFecha = () => {
     const artOrdFecha = articulosLista.slice().sort((a, b) => b.fecha - a.fecha);
-    console.log("Lista de articulos ordenada por fecha decreciente");
+    console.log("Se ordenaron los articulos por fecha decreciente");
 
     for (const art of artOrdFecha) {
         console.log(art.fecha, " - ", art.titulo);
     }
+    return artOrdFecha;
 };
 
-// Para el caso de la plantilla, sólo se trabajarán los archivos de a uno
-const art01 = crearArticulo();
-articulosLista.push(art01);
+// Funcion para crea articulo y lo agrega al array, cuando se pulsa el boton
+formArticulo.addEventListener("submit", (event) => {
+    const titulo = ingTitulo.value;
+    const tema = ingTema.value;
+    const autor = ingAutor.value;
+    const fecha = ingFecha.value;
+
+    const art01 = new articulo(titulo, tema.toLowerCase(), autor.toLowerCase(), new Date(fecha));
+    crearArticulo(art01);
+    alert("Se ha creado tu entrada");
+});
+
+const articulosOrdenados = ordenaFecha();
+
+// Imprimir en el "aside" los articulos ordenados por fecha
+//Para futuras entregas debo crearlos como enlaces y darles el estilo
+for (let art of articulosOrdenados) {
+    let itemArticulo = document.createElement("li");
+    itemArticulo.textContent = `${art.titulo}`;
+    listaUltimasEntradas.appendChild(itemArticulo);
+}
 
 //Muestro todo el array de objetos
 console.log(articulosLista);
 
 //Imprime solo los titulos
 mostrarArticulos();
+//Subscripción
+formSubscribir.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    alert("La subscripción no está lista todavía, paciencia!!");
+});
