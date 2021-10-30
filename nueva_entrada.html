@@ -91,6 +91,8 @@
                                 <h3 class="section1__paragraph mb-2">Ejemplo:</h3>
                                 <img src="./img/blog_ejemplo.PNG" alt="Ejemplo de artículo terminado" class="col-12 col-sm-10 col-md-8" />
                             </div>
+
+                            <!-- SECCION PARA CARGAR UN ARTICULO NUEVO -->
                             <form action="" class="section1__form--blog" id="form-articulo">
                                 <fieldset class="container">
                                     <div class="col-md-8">
@@ -128,7 +130,15 @@
                                     </div>
                                 </fieldset>
                             </form>
+
+                            <!-- Lista de articulos existentes -->
+                            <div>
+                                <h3 class="section1__paragraph mb-2 mt-5">Lista de Artículos</h3>
+                                <ul class="" id="lista-articulos"></ul>
+                                <input class="form__button--blog" type="submit" value="Borrar seleccionados" name="" id="btn-borrar-art" />
+                            </div>
                         </div>
+
                         <div class="g-0 col-sm-4 col-md-4">
                             <aside class="aside">
                                 <form action="" class="section1__form--blog" id="form-subscribir">
@@ -173,6 +183,6 @@
             integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
             crossorigin="anonymous"
         ></script>
-        <script src="./app.js"></script>
+        <script type="module" src="./app.js"></script>
     </body>
 </html>
