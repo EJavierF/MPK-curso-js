@@ -13,7 +13,7 @@
         <title>Nueva entrada - Blog</title>
 
         <!-- Hoja de estilos propios - Generados por SASS -->
-        <link rel="stylesheet" href="../assets/css/style.css" />
+        <link rel="stylesheet" href="./assets/css/style.css" />
 
         <!-- CSS -- Se enlaza bootstrap y fuentes de googlefonts -->
         <link
@@ -36,7 +36,7 @@
                 <nav class="navbar navbar-expand-sm navbar-dark">
                     <div class="container-fluid">
                         <a class="navbar-brand" href="#">
-                            <img width="30" height="30" alt="" src="../../img/MPK_cara_02.svg" alt="Muy Pro Kids" />
+                            <img width="30" height="30" alt="" src="./img/MPK_cara_02.svg" alt="Muy Pro Kids" />
                         </a>
                         <button
                             class="navbar-toggler"
@@ -85,24 +85,67 @@
                             <h3 class="section1__subtitle">Agregando un nuevo artículo de blog usando la plantilla</h3>
                             <div class="mb-5">
                                 <p class="section1__paragraph col-md-9">
-                                    - Atención!! los resultados se ven por consola por el momento!! -
-                                    <br />
-                                    <br />
                                     Utiliza las plantillas para crear una nueva entrada. Deberas ingresar los títulos, textos e imágenes (o videos) en los lugares correspondientes y a herramienta
                                     creará el nuevo artículo listo para publicar.
                                 </p>
                                 <h3 class="section1__paragraph mb-2">Ejemplo:</h3>
                                 <img src="./img/blog_ejemplo.PNG" alt="Ejemplo de artículo terminado" class="col-12 col-sm-10 col-md-8" />
                             </div>
-                            <div class="mb-5">
-                                <p class="section1__paragraph col-md-9">
-                                    El contenido ubicado a la izquierda es lo que debes ingresar, las listas que se ven a la derecha se actualizarán automáticamente
-                                </p>
+
+                            <!-- SECCION PARA CARGAR UN ARTICULO NUEVO -->
+                            <form action="" class="section1__form--blog" id="form-articulo">
+                                <fieldset class="container">
+                                    <div class="col-md-8">
+                                        <div class="mb-4">
+                                            <label class="form-label" for="titulo">Título de la nueva entrada</label>
+                                            <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Título del artículo" />
+                                        </div>
+                                        <!-- lista de seleccion para tema -->
+                                        <div class="mb-4">
+                                            <label class="form-label" for="autor">Autor del artículo</label>
+                                            <select class="formInput__select" name="autor" id="autor">
+                                                <option value="papa">Papá</option>
+                                                <option value="mama">Mamá</option>
+                                                <option value="niño">Niño</option>
+                                            </select>
+                                        </div>
+                                        <!-- lista de seleccion para el autor -->
+                                        <div class="mb-4">
+                                            <label class="form-label" for="tema">Tema del artículo</label>
+                                            <select class="formInput__select" name="tema" id="tema">
+                                                <option value="dibujo">Dibujo digital</option>
+                                                <option value="animacion">Animaciones</option>
+                                                <option value="stopMotion">Stop Motion</option>
+                                                <option value="programacion">Programación</option>
+                                                <option value="videojuegos">Videouegos</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="mb-4">
+                                            <label class="form-label" for="fecha">Fecha de creación de la entrada</label>
+                                            <input type="text" class="form-control" id="fecha" name="fecha" placeholder="AAAA-MM-DD" />
+                                        </div>
+
+                                        <input class="form__button--blog" type="submit" value="Crear" name="" id="btnCargar" />
+                                    </div>
+                                </fieldset>
+                            </form>
+
+                            <!-- Lista de articulos existentes -->
+                            <div>
+                                <h3 class="section1__paragraph mb-2 mt-5">Lista completa de Artículos</h3>
+                                <!-- <h4 class="section1__paragraph mb-2 mt-5">
+                                    ¿Ordenar artículos por fecha? <span><input type="checkbox" id="check-ord" /></span>
+                                </h4> -->
+
+                                <ul class="" id="lista-articulos"></ul>
+                                <input class="form__button--blog" type="submit" value="Borrar seleccionados" name="" id="btn-borrar-art" />
                             </div>
                         </div>
+
                         <div class="g-0 col-sm-4 col-md-4">
                             <aside class="aside">
-                                <form action="" class="section1__form--blog">
+                                <form action="" class="section1__form--blog" id="form-subscribir">
                                     <fieldset>
                                         <div>
                                             <label class="form-label" for="emailSubs">Déjanos tu correo y suscribite a nuestro blog!</label>
@@ -114,12 +157,8 @@
                                 </form>
                             </aside>
                             <aside class="aside">
-                                <h3 class="aside-subtitle">Últimas entradas</h3>
-                                <ul class="aside-menu">
-                                    <li><a href="#">Dibujando a Hank en 3D</a></li>
-                                    <li><a href="#">Primeras animaciones en Piskel</a></li>
-                                    <li><a href="#">Animaciones en Paint 3D</a></li>
-                                </ul>
+                                <h3 class="aside-subtitle">Últimas 5 entradas</h3>
+                                <ul class="aside-menu" id="lista-ultimas-entradas"></ul>
                             </aside>
                             <aside class="aside">
                                 <h3 class="aside-subtitle">Entradas ordenadas por tema</h3>
@@ -148,6 +187,6 @@
             integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
             crossorigin="anonymous"
         ></script>
-        <script src="./app.js"></script>
+        <script type="module" src="./app.js"></script>
     </body>
 </html>
