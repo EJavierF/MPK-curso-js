@@ -129,28 +129,31 @@ ol {
   padding: 1rem; }
 
 .formInput__text_email {
-  width: 90%;
-  padding: 0.6rem 0.5rem;
-  margin: 0.6rem 1rem; }
+  width: 65%;
+  padding: 0.5rem 0.5rem;
+  margin: 0.5rem 0rem;
+  border-radius: 5px; }
 
 .formInput__textarea {
   width: 90%;
   height: 10rem;
-  padding: 0.6rem 0.5rem;
-  margin: 0.6rem 1rem; }
+  padding: 0.5rem 0.5rem;
+  margin: 0.5rem 0rem;
+  border-radius: 5px; }
 
 .formInput__checkbox {
-  padding: 6px 5px;
-  margin: 10px 0; }
+  padding: 5px 5px;
+  margin: 1px 0; }
 
 .formInput__select {
-  padding: 6px 5px;
-  margin: 10px 0; }
+  padding: 5px 5px;
+  margin: 1px 0;
+  border-radius: 5px; }
 
 .form__button {
   background-color: #911ed3;
   border: none;
-  border-radius: 10px;
+  border-radius: 5px;
   color: #fff;
   padding: 10px 40px;
   text-decoration: none;

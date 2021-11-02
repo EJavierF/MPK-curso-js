@@ -59,6 +59,7 @@ const formSubscribir = document.getElementById("form-subscribir");
 const listaUltimasEntradas = document.getElementById("lista-ultimas-entradas");
 const listaArtDOM = document.getElementById("lista-articulos");
 const btnBorrarArt = document.getElementById("btn-borrar-art");
+const checkOrd = document.getElementById("check-ord");
 
 //funcion para listar los nombres de articulos
 const mostrarArticulos = () => {
@@ -72,9 +73,6 @@ const ordenaFecha = () => {
     const artOrdFecha = articulosLista.slice().sort((a, b) => b.fecha - a.fecha);
     console.log("Se ordenaron los articulos por fecha decreciente");
 
-    for (const art of artOrdFecha) {
-        console.log(art.fecha, " - ", art.titulo);
-    }
     return artOrdFecha;
 };
 
@@ -95,14 +93,20 @@ const articulosOrdenados = ordenaFecha();
 
 // Imprimir en el "aside" los articulos ordenados por fecha
 //Para futuras entregas debo crearlos como enlaces y darles el estilo
-for (let art of articulosOrdenados) {
+for (let i = 0; i < articulosOrdenados.length && i < 5; i++) {
     let itemArticulo = document.createElement("li");
-    itemArticulo.textContent = `${art.titulo}`;
+    itemArticulo.textContent = `${articulosOrdenados[i].titulo}`;
     listaUltimasEntradas.appendChild(itemArticulo);
 }
 
-const renderLista = () => {
-    for (let art of articulosLista) {
+const renderLista = (a) => {
+    let lista = "";
+    if (a == true) {
+        lista = articulosOrdenados;
+    } else {
+        lista = articulosLista;
+    }
+    for (let art of lista) {
         let itemArticulo = document.createElement("li");
         itemArticulo.innerHTML = `<input type="checkbox" id="${art.id}">    ${art.titulo}
         `;
@@ -120,15 +124,10 @@ btnBorrarArt.addEventListener("click", () => {
     location.reload();
 });
 
-//Render de lista en DOM
+//Render de lista en DOM todavía sin opción de mostrar ordenado por lo menos en el cuerpo (sí esta en aside)
 
-renderLista();
+renderLista(false);
 
-//Muestro todo el array de objetos
-console.log(articulosLista);
-
-//Imprime solo los titulos
-mostrarArticulos();
 //Subscripción
 formSubscribir.addEventListener("submit", (event) => {
     event.preventDefault();
