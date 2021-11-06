@@ -55,6 +55,13 @@ $(document).ready(function () {
 
     const articulosOrdenados = ordenaFecha(articulosLista);
     console.log(articulosOrdenados);
+    console.log(articulosOrdenados[0]);
+    console.log(articulosOrdenados[0].fecha);
+    console.log(typeof articulosOrdenados[0].fecha);
+    let fechanum = new Date(articulosOrdenados[0].fecha).getTime();
+    console.log(fechanum);
+    console.log(typeof fechanum);
+
     // refrescaLista();
 
     // Imprimir en el "aside" los articulos ordenados por fecha

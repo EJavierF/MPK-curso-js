@@ -37,8 +37,9 @@ const mostrarArticulos = (articulosLista) => {
 };
 //Ordenando por fecha
 const ordenaFecha = (lista) => {
-    const artOrdFecha = lista.slice().sort((a, b) => new Date(b.fecha).getTime() > new Date(a.fecha).getTime());
+    const artOrdFecha = lista.slice().sort((a, b) => new Date(b.fecha).getTime() - new Date(a.fecha).getTime());
     console.log('Se ordenaron los articulos por fecha decreciente');
+    console.log(artOrdFecha);
 
     return artOrdFecha;
 };
