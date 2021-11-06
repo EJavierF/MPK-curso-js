@@ -28,12 +28,6 @@ $(document).ready(function () {
     const btnBorrarArt = $('#btn-borrar-art');
     const checkOrd = $('#check-ord');
 
-    //
-    // const refrescaLista = () => {
-    //     //listaArtDOM.empty();
-    //     renderLista(false, articulosLista, articulosOrdenados, listaArtDOM);
-    // };
-
     // Funcion para crea articulo y lo agrega al array, cuando se pulsa el boton
     //   formArticulo.submit((event) => {
     btnCrear.click((event) => {
@@ -51,26 +45,24 @@ $(document).ready(function () {
 
         event.preventDefault();
         refrescaLista();
+        imprimeAside();
     });
 
-    const articulosOrdenados = ordenaFecha(articulosLista);
-    console.log(articulosOrdenados);
-    console.log(articulosOrdenados[0]);
-    console.log(articulosOrdenados[0].fecha);
-    console.log(typeof articulosOrdenados[0].fecha);
-    let fechanum = new Date(articulosOrdenados[0].fecha).getTime();
-    console.log(fechanum);
-    console.log(typeof fechanum);
-
-    // refrescaLista();
+    let articulosOrdenados = ordenaFecha(articulosLista);
 
     // Imprimir en el "aside" los articulos ordenados por fecha
     //Para futuras entregas debo darles el estilo
-    for (let i = 0; i < articulosOrdenados.length && i < 5; i++) {
-        let itemArticulo = document.createElement('li');
-        itemArticulo.innerHTML = `<a href="${articulosOrdenados[i].url}">${articulosOrdenados[i].titulo}</a>`;
-        listaUltimasEntradas.append(itemArticulo);
-    }
+    const imprimeAside = () => {
+        articulosOrdenados = ordenaFecha(articulosLista);
+        listaUltimasEntradas.empty();
+        for (let i = 0; i < articulosOrdenados.length && i < 5; i++) {
+            let itemArticulo = document.createElement('li');
+            itemArticulo.innerHTML = `<a href="${articulosOrdenados[i].url}">${articulosOrdenados[i].titulo}</a>`;
+            listaUltimasEntradas.append(itemArticulo);
+        }
+    };
+
+    imprimeAside();
 
     btnBorrarArt.click(() => {
         for (let art of articulosLista) {
@@ -80,6 +72,7 @@ $(document).ready(function () {
             }
         }
         refrescaLista();
+        imprimeAside();
     });
 
     //Render de lista en DOM todavía sin opción de mostrar ordenado por lo menos en el cuerpo (sí esta en aside)
