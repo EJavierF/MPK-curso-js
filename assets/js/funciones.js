@@ -22,7 +22,7 @@ const buscaArticulo = (id, articulosLista) => {
 
 //Borrar artículo por id
 const borrarArticulo = (id, articulosLista) => {
-    const art = buscaArticulo(id);
+    const art = buscaArticulo(id, articulosLista);
     const index = articulosLista.indexOf(art);
     articulosLista.splice(index, 1);
     localStorage.setItem('articulosLista', JSON.stringify(articulosLista));
@@ -53,8 +53,8 @@ const renderLista = (a, listaCruda, listaOrd, listaArtDOM) => {
     }
     for (let art of lista) {
         let itemArticulo = document.createElement('li');
-        itemArticulo.innerHTML = `<input type="checkbox" id="${art.id}">    ${art.titulo}
-      `;
+        itemArticulo.innerHTML = `<input type="checkbox" id="${art.id}">    ${art.titulo}`;
+        //listaArtDOM.append(` <li><input type="checkbox" id="${art.id}">    ${art.titulo} </li>`);
         listaArtDOM.appendChild(itemArticulo);
     }
 };
