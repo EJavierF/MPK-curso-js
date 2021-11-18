@@ -32,51 +32,7 @@
     <body class="body d-flex flex-column justify-content-between">
         <!--Menú desplegable para navegación, responsivo, disponible en todas las páginas-->
         <div>
-            <header class="bg_gradient sticky-top">
-                <nav class="navbar navbar-expand-sm navbar-dark">
-                    <div class="container-fluid">
-                        <a class="navbar-brand" href="#">
-                            <img width="30" height="30" alt="" src="../img/MPK_cara_02.svg" alt="Muy Pro Kids" />
-                        </a>
-                        <button
-                            class="navbar-toggler"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#navbarNav"
-                            aria-controls="navbarSupportedContent"
-                            aria-expanded="false"
-                            aria-label="Toggle navigation"
-                        >
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-
-                        <div class="collapse navbar-collapse header__menu" id="navbarNav">
-                            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                                <li class="nav-item"><a class="nav-link text-light" href="../index.html">Inicio</a></li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Actividades</a>
-                                    <!-- contiene los enlaces a los diferentes artículos dentro de la otra pagina -->
-                                    <ul class="dropdown-menu bg_gradient" aria-labelledby="navbarDropdown">
-                                        <li>
-                                            <a class="dropdown-item fs-3 text-light" href="#">Dibujos y animaciones</a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item fs-3 text-light" href="#">Stop Motion</a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item fs-3 text-light" href="#">Aprendiendo a programar jugando</a>
-                                        </li>
-                                    </ul>
-                                </li>
-
-                                <li class="nav-item"><a class="nav-link text-light" href="./web-construccion.html">Contacto</a></li>
-                                <li class="nav-item"><a class="nav-link text-light" href="./web-construccion.html">Sobre Nosotros</a></li>
-                                <li class="nav-item"><a class="nav-link text-light" href="./nueva_entrada.html">Blog</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-            </header>
+            <header class="bg_gradient sticky-top" id="header"></header>
             <section class="section1">
                 <h1 class="section1__title">Crea una nueva entrada - Blog</h1>
                 <article class="section1_article1 container">
@@ -104,20 +60,20 @@
                                         <div class="mb-4">
                                             <label class="form-label" for="autor">Autor del artículo</label>
                                             <select class="formInput__select" name="autor" id="autor">
-                                                <option value="papa">Papá</option>
-                                                <option value="mama">Mamá</option>
-                                                <option value="niño">Niño</option>
+                                                <option value="Papá">Papá</option>
+                                                <option value="Mamá">Mamá</option>
+                                                <option value="Niño">Niño</option>
                                             </select>
                                         </div>
                                         <!-- lista de seleccion para el autor -->
                                         <div class="mb-4">
                                             <label class="form-label" for="tema">Tema del artículo</label>
                                             <select class="formInput__select" name="tema" id="tema">
-                                                <option value="dibujo">Dibujo digital</option>
-                                                <option value="animacion">Animaciones</option>
-                                                <option value="stopMotion">Stop Motion</option>
-                                                <option value="programacion">Programación</option>
-                                                <option value="videojuegos">Videouegos</option>
+                                                <option value="Dibujo">Dibujo digital</option>
+                                                <option value="Animación">Animaciones</option>
+                                                <option value="Stop Motion">Stop Motion</option>
+                                                <option value="Programación">Programación</option>
+                                                <option value="Videojuegos">Videouegos</option>
                                             </select>
                                         </div>
 
@@ -134,41 +90,16 @@
                             <!-- Lista de articulos existentes -->
                             <div>
                                 <h3 class="section1__paragraph mb-2 mt-5">Lista completa de Artículos</h3>
-                                <!-- <h4 class="section1__paragraph mb-2 mt-5">
+                                <h4 class="section1__paragraph mb-2 mt-5">
                                     ¿Ordenar artículos por fecha? <span><input type="checkbox" id="check-ord" /></span>
-                                </h4> -->
+                                </h4>
 
                                 <ul class="" id="lista-articulos"></ul>
                                 <input class="form__button--blog" type="submit" value="Borrar seleccionados" name="" id="btn-borrar-art" />
                             </div>
                         </div>
 
-                        <div class="g-0 col-sm-4 col-md-4">
-                            <aside class="aside">
-                                <form action="" class="section1__form--blog" id="form-subscribir">
-                                    <fieldset>
-                                        <div>
-                                            <label class="form-label" for="emailSubs">Déjanos tu correo y suscribite a nuestro blog!</label>
-
-                                            <input type="email" class="form-control" id="emailSubs" name="emailSubs" placeholder="nombre@correo" />
-                                            <input class="form__button--blog" type="submit" value="Suscribir" name="" id="btnSuscribir" />
-                                        </div>
-                                    </fieldset>
-                                </form>
-                            </aside>
-                            <aside class="aside">
-                                <h3 class="aside-subtitle">Últimas 5 entradas</h3>
-                                <ul class="aside-menu" id="lista-ultimas-entradas"></ul>
-                            </aside>
-                            <aside class="aside">
-                                <h3 class="aside-subtitle">Entradas ordenadas por tema</h3>
-                                <ul class="aside-menu">
-                                    <li><a href="#"> Dibujos y animaciones</a></li>
-                                    <li><a href="#"> Stop Motion</a></li>
-                                    <li><a href="#">Programación</a></li>
-                                </ul>
-                            </aside>
-                        </div>
+                        <div class="g-0 col-sm-4 col-md-4" id="side-menu"></div>
                     </div>
                 </article>
             </section>
@@ -191,5 +122,6 @@
         <script src="../assets/js/jquery-3.5.1.min.js" type="text/javascript"></script>
 
         <script type="module" src="../assets/js/app.js"></script>
+        <script type="module" src="../assets/js/model.js"></script>
     </body>
 </html>
