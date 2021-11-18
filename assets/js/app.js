@@ -5,7 +5,7 @@
 
 import { articulos } from './articulosData.js';
 import { articulo } from './clases.js';
-import { armaUrl, crearArticulo, buscaArticulo, borrarArticulo, mostrarArticulos, ordenaFecha, renderLista } from './funciones.js';
+import { armaUrl, crearArticulo, buscaArticulo, borrarArticulo, mostrarArticulos, ordenaFecha, renderLista, imprimeCards } from './funciones.js';
 
 //vector con lista completa de articulos
 let articulosLista = JSON.parse(localStorage.getItem('articulosLista')) || articulos;
@@ -13,60 +13,94 @@ let articulosLista = JSON.parse(localStorage.getItem('articulosLista')) || artic
 // Indico la ruta que voy a usar para guardar los html
 const ruta = './articles/';
 
-// Traigo los elementos del DOM
-const formArticulo = document.getElementById('form-articulo');
-const ingTitulo = document.getElementById('titulo');
-const ingTema = document.getElementById('tema');
-const ingAutor = document.getElementById('autor');
-const ingFecha = document.getElementById('fecha');
-const formSubscribir = document.getElementById('form-subscribir');
-const listaUltimasEntradas = document.getElementById('lista-ultimas-entradas');
-const listaArtDOM = document.getElementById('lista-articulos');
-const btnBorrarArt = document.getElementById('btn-borrar-art');
-const checkOrd = document.getElementById('check-ord');
+//Espero a que carguen los elementos del DOM
+$(document).ready(function () {
+    // Traigo los elementos del DOM
+    const formArticulo = $('#form-articulo');
+    const ingTitulo = $('#titulo');
+    const ingTema = $('#tema');
+    const ingAutor = $('#autor');
+    const ingFecha = $('#fecha');
+    const formSubscribir = $('#form-subscribir');
+    const listaUltimasEntradas = $('#lista-ultimas-entradas');
+    const listaArtDOM = $('#lista-articulos');
+    const btnCrear = $('#btn-Crear');
+    const btnBorrarArt = $('#btn-borrar-art');
+    const checkOrd = $('#check-ord');
 
-// Funcion para crea articulo y lo agrega al array, cuando se pulsa el boton
-formArticulo.addEventListener('submit', (event) => {
-    const titulo = ingTitulo.value;
-    const tema = ingTema.value;
-    const autor = ingAutor.value;
-    const fecha = ingFecha.value;
-    const id = titulo[0] + tema[0] + autor[0] + fecha;
-    const url = `${ruta}${armaUrl(titulo)}.html`;
+    let articulosOrdenados = ordenaFecha(articulosLista);
 
-    const art01 = new articulo(id, titulo, tema.toLowerCase(), autor.toLowerCase(), new Date(fecha), url);
-    crearArticulo(art01, articulosLista);
-    alert('Se ha creado tu entrada');
-});
-
-const articulosOrdenados = ordenaFecha(articulosLista);
-console.log(articulosOrdenados);
-
-// Imprimir en el "aside" los articulos ordenados por fecha
-//Para futuras entregas debo crearlos como enlaces y darles el estilo
-for (let i = 0; i < articulosOrdenados.length && i < 5; i++) {
-    let itemArticulo = document.createElement('li');
-    itemArticulo.innerHTML = `<a href="${articulosOrdenados[i].url}">${articulosOrdenados[i].titulo}</a>`;
-    listaUltimasEntradas.appendChild(itemArticulo);
-}
-
-btnBorrarArt.addEventListener('click', () => {
-    for (let art of articulosLista) {
-        const checkbox = document.getElementById(art.id);
-        if (checkbox.checked) {
-            borrarArticulo(art.id, articulosLista);
+    // Imprimir en el "aside" los articulos ordenados por fecha
+    //Para futuras entregas debo darles el estilo
+    const imprimeAside = () => {
+        articulosOrdenados = ordenaFecha(articulosLista);
+        listaUltimasEntradas.empty();
+        for (let i = 0; i < articulosOrdenados.length && i < 5; i++) {
+            let itemArticulo = document.createElement('li');
+            itemArticulo.innerHTML = `<a href="${articulosOrdenados[i].url}">${articulosOrdenados[i].titulo}</a>`;
+            listaUltimasEntradas.append(itemArticulo);
         }
+    };
+
+    imprimeAside();
+
+    //Subscripción
+    formSubscribir.submit((event) => {
+        event.preventDefault();
+
+        alert('La subscripción no está lista todavía, paciencia!!');
+    });
+
+    //Para esta seccion del código debo asegurarme que estoy parado sobre la página "Nueva entrada", caso contrario provoca errores
+    if ($('title')[0].outerText === 'Nueva entrada - Blog') {
+        // Funcion para crea articulo y lo agrega al array, cuando se pulsa el boton
+
+        btnCrear.click((event) => {
+            const titulo = ingTitulo[0].value;
+            const tema = ingTema[0].value;
+            const autor = ingAutor[0].value;
+            //const intro = ingIntro[0].value;
+            //const body = ingBody[0].value;
+            const intro = 'Este es el último artículo creado, como prueba, que luego tendrá su input como corresponde';
+            const body = 'todo el contenido mucho mas copado que trae la nota recontra copada como ya dije';
+            const fecha = ingFecha[0].value;
+            const id = titulo[0] + tema[0] + autor[0] + fecha;
+            //const imgurl = imagenUrl[0].value;
+            const imgurl = '../img/MPK-02.png';
+
+            const art01 = new articulo(id, titulo, tema, autor, intro, body, new Date(fecha), imgurl);
+            crearArticulo(art01, articulosLista);
+            alert('Se ha creado tu entrada');
+            formArticulo[0].reset();
+
+            event.preventDefault();
+            refrescaLista();
+            imprimeAside();
+        });
+
+        btnBorrarArt.click(() => {
+            for (let art of articulosLista) {
+                const checkbox = document.getElementById(art.id);
+                if (checkbox.checked) {
+                    borrarArticulo(art.id, articulosLista);
+                }
+            }
+            refrescaLista();
+            imprimeAside();
+        });
+
+        //Render de lista en DOM con posibilidad de ordenar por fecha
+        const refrescaLista = () => {
+            listaArtDOM.empty();
+            renderLista($('#check-ord')[0].checked, articulosLista, articulosOrdenados, listaArtDOM[0]);
+        };
+        renderLista($('#check-ord')[0].checked, articulosLista, articulosOrdenados, listaArtDOM[0]);
+
+        $('#check-ord').change(() => {
+            refrescaLista();
+        });
     }
-    location.reload();
-});
 
-//Render de lista en DOM todavía sin opción de mostrar ordenado por lo menos en el cuerpo (sí esta en aside)
-
-renderLista(false, articulosLista, articulosOrdenados, listaArtDOM);
-
-//Subscripción
-formSubscribir.addEventListener('submit', (event) => {
-    event.preventDefault();
-
-    alert('La subscripción no está lista todavía, paciencia!!');
+    const idBlog = '#cards-articulos';
+    imprimeCards(idBlog, articulosOrdenados);
 });

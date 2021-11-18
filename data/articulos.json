@@ -1,0 +1,68 @@
+[
+    {
+        "id": "adp2021-05-13",
+        "titulo": "Aprendo a dibujar",
+        "tema": "Dibujo",
+        "autor": "Papá",
+        "intro": "En este artículo vamos a conocer las primeras herramientas para crear unos dibujos sencillos, que luego vamos a  ir mejorando hasta donde la creatividad nos deje",
+        "body": "",
+        "fecha": "2021-05-13T00:00:00.000Z",
+        "imgurl": "/img/MPK-02.png",
+        "fechaCarga": "2021-10-21T22:23:43.682Z"
+    },
+    {
+        "id": "ppn2021-05-01",
+        "titulo": "Programando en Scratch",
+        "tema": "Programación",
+        "autor": "Niño",
+        "intro": "¿Sabías que la programación es ahora un juego de niños? Acompañanos a descubrir cómo crear tu primer juego o animación totalmente desde cero",
+        "body": "",
+        "fecha": "2021-05-01T00:00:00.000Z",
+        "imgurl": "../img/MPK-02.png",
+        "fechaCarga": "2021-10-21T22:25:11.210Z"
+    },
+    {
+        "id": "pan2020-04-23",
+        "titulo": "Primeras animaciones en piskel",
+        "tema": "Animación",
+        "autor": "Niño",
+        "intro": "¿Te gustaría crear tus propios dibujos animados? Pues ¡Demos el primer paso! Con este tutorial introductorio a piskel, vamos a crear una cookie saltarina en muy pocos pasos",
+        "body": "",
+        "fecha": "2020-04-23T00:00:00.000Z",
+        "imgurl": "/img/card_piskel_frames.png",
+        "fechaCarga": "2021-10-21T22:25:46.234Z"
+    },
+    {
+        "id": "asn2021-03-14",
+        "titulo": "Armando tu set de stop motion",
+        "tema": "Stopmotion",
+        "autor": "Niño",
+        "intro": "En esta ocasión especial, vamos a ver como usar tus juguetes favoritos para contar maravillosas historias en forma de películas",
+        "body": "",
+        "fecha": "2021-03-14T00:00:00.000Z",
+        "imgurl": "../img/Card_anim_paint3D.png",
+        "fechaCarga": "2021-10-21T22:30:39.201Z"
+    },
+    {
+        "id": "ddm2021-07-21",
+        "titulo": "Del 2D al 3D - Dibujando a Hank",
+        "tema": "Dibujo",
+        "autor": "Mamá",
+        "intro": "Hoy vamos a ver cómo crear un personaje 3D a partir de uno 2D. Acompañanos en este tutorial para conocer como crear a un Hank con su cuerpo entero a partir de un dibujo",
+        "body": "",
+        "fecha": "2021-07-21T00:00:00.000Z",
+        "imgurl": "../img/Card_hank_paint3D.png",
+        "fechaCarga": "2021-10-21T22:33:07.226Z"
+    },
+    {
+        "id": "man2021-10-20",
+        "titulo": "Animaciones con paint 3d",
+        "tema": "Animación",
+        "autor": "Niño",
+        "intro": "¿Sabías que se pueden hacer animaciones con Paint 3D? Ahora lo sabés! Te vamos a mostrar cuáles son las opciones para elegir y cómo podés hacerlo vos mismo con un dibujo sencillo y unos pocos clicks.",
+        "body": "",
+        "fecha": "2021-10-20T00:00:00.000Z",
+        "imgurl": "../img/Card_anim_paint3D.png",
+        "fechaCarga": "2021-10-21T23:41:19.545Z"
+    }
+]

@@ -22,7 +22,7 @@ const buscaArticulo = (id, articulosLista) => {
 
 //Borrar artículo por id
 const borrarArticulo = (id, articulosLista) => {
-    const art = buscaArticulo(id);
+    const art = buscaArticulo(id, articulosLista);
     const index = articulosLista.indexOf(art);
     articulosLista.splice(index, 1);
     localStorage.setItem('articulosLista', JSON.stringify(articulosLista));
@@ -37,8 +37,9 @@ const mostrarArticulos = (articulosLista) => {
 };
 //Ordenando por fecha
 const ordenaFecha = (lista) => {
-    const artOrdFecha = lista.slice().sort((a, b) => new Date(b.fecha).getTime() > new Date(a.fecha).getTime());
+    const artOrdFecha = lista.slice().sort((a, b) => new Date(b.fecha).getTime() - new Date(a.fecha).getTime());
     console.log('Se ordenaron los articulos por fecha decreciente');
+    console.log(artOrdFecha);
 
     return artOrdFecha;
 };
@@ -53,10 +54,41 @@ const renderLista = (a, listaCruda, listaOrd, listaArtDOM) => {
     }
     for (let art of lista) {
         let itemArticulo = document.createElement('li');
-        itemArticulo.innerHTML = `<input type="checkbox" id="${art.id}">    ${art.titulo}
-      `;
+        itemArticulo.innerHTML = `<input type="checkbox" id="${art.id}">    ${art.titulo}`;
+
         listaArtDOM.appendChild(itemArticulo);
     }
 };
 
-export { armaUrl, crearArticulo, buscaArticulo, borrarArticulo, mostrarArticulos, ordenaFecha, renderLista };
+const imprimeCards = (identifier, articulos) => {
+    for (const art of articulos) {
+        $(identifier).append(`
+            <div class="card mb-3 card-blog" style="max-width: 540px">
+                                <a href="#">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img src=${art.imgurl} class="img-fluid rounded-start h-100" alt="..." />
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body d-flex flex-column h-100 justify-content-between">
+                                                <h5 class="card-title">${art.titulo}</h5>
+                                                <p class="card-text">
+                                                    ${art.intro}
+                                                </p>
+                                                <div class="">
+                                                    <ul class="d-flex justify-content-between ps-0 card-text">
+                                                        <li><i class="bi bi-calendar-event-fill"> ${new Date(art.fecha).toLocaleDateString()}</i></li>
+                                                        <li><i class="bi bi-person-square"> ${art.autor}</i></li>
+                                                        <li><i class="bi bi-folder">${art.tema}</i></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+        `);
+    }
+};
+
+export { armaUrl, crearArticulo, buscaArticulo, borrarArticulo, mostrarArticulos, ordenaFecha, renderLista, imprimeCards };
