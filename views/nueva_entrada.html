@@ -82,7 +82,7 @@
                                             <input type="text" class="form-control" id="fecha" name="fecha" placeholder="AAAA-MM-DD" />
                                         </div>
 
-                                        <input class="form__button--blog" type="submit" value="Crear" name="" id="btn-Crear" />
+                                        <input class="form__button--blog" type="button" value="Crear nueva" data-bs-toggle="modal" data-bs-target="#cuerpoArticulo" />
                                     </div>
                                 </fieldset>
                             </form>
@@ -96,6 +96,43 @@
 
                                 <ul class="" id="lista-articulos"></ul>
                                 <input class="form__button--blog" type="submit" value="Borrar seleccionados" name="" id="btn-borrar-art" />
+                            </div>
+                            <!-- prueba de modal -->
+
+                            <!-- Button trigger modal -->
+                            <!-- <button type="button" class="form__button--blog" data-bs-toggle="modal" data-bs-target="#cuerpoArticulo">Launch static backdrop modal</button> -->
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="cuerpoArticulo" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticBackdropLabel">Cuerpo de nuevo mensaje</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <!-- lista de seleccion para el componente del body -->
+                                            <form action="" class="section1__form--blog" id="form-articulo-body">
+                                                <fieldset class="container">
+                                                    <div class="mb-4">
+                                                        <label class="form-label" for="elemento">Elemento: </label>
+                                                        <select class="formInput__select" name="elemento" id="elem">
+                                                            <option value="subtitulo">Subtítulo</option>
+                                                            <option value="parrafo">Párrafo</option>
+                                                            <option value="imagen">Imagen</option>
+                                                        </select>
+                                                    </div>
+                                                    <div id="contenido">aca va el contenido por js</div>
+                                                </fieldset>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="form__button--blog" data-bs-dismiss="modal">Cerrar</button>
+                                            <button type="button" class="form__button--blog" id="push-body">Agregar Sección</button>
+                                            <input class="form__button--blog" type="button" value="Crear" name="" id="btn-Crear" />
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 

@@ -27,6 +27,8 @@ $(document).ready(function () {
     const btnCrear = $('#btn-Crear');
     const btnBorrarArt = $('#btn-borrar-art');
     const checkOrd = $('#check-ord');
+    const contenido = $('#contenido');
+    const elem = $('#elem');
 
     let articulosOrdenados = ordenaFecha(articulosLista);
 
@@ -78,6 +80,19 @@ $(document).ready(function () {
             imprimeAside();
         });
 
+        console.log(elem.value);
+        if (elem.value == 'subtitulo') {
+            contenido.html(`
+                <input type="text" class="form-control" id="seccion"  placeholder="Subtítulo de sección" />
+                `);
+        } else if (elem.value == 'parrafo') {
+            contenido.html(`
+                <input type="textarea" class="form-control" id="seccion"  placeholder="Agregar párrafo" />
+                `);
+        } else if (elem.value == 'imagen') {
+            contenido.html(`<div> boton para cargar imagen</div>`);
+        }
+
         btnBorrarArt.click(() => {
             for (let art of articulosLista) {
                 const checkbox = document.getElementById(art.id);
@@ -92,11 +107,11 @@ $(document).ready(function () {
         //Render de lista en DOM con posibilidad de ordenar por fecha
         const refrescaLista = () => {
             listaArtDOM.empty();
-            renderLista($('#check-ord')[0].checked, articulosLista, articulosOrdenados, listaArtDOM[0]);
+            renderLista(checkOrd[0].checked, articulosLista, articulosOrdenados, listaArtDOM[0]);
         };
-        renderLista($('#check-ord')[0].checked, articulosLista, articulosOrdenados, listaArtDOM[0]);
+        renderLista(checkOrd[0].checked, articulosLista, articulosOrdenados, listaArtDOM[0]);
 
-        $('#check-ord').change(() => {
+        checkOrd.change(() => {
             refrescaLista();
         });
     }
