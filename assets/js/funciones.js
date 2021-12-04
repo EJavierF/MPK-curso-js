@@ -64,7 +64,7 @@ const imprimeCards = (identifier, articulos) => {
     for (const art of articulos) {
         $(identifier).append(`
             <div class="card mb-3 card-blog" style="max-width: 540px">
-                                <a href="#">
+                                <a href="/views/articulo.html">
                                     <div class="row g-0">
                                         <div class="col-md-4">
                                             <img src=${art.imgurl} class="img-fluid rounded-start h-100" alt="..." />

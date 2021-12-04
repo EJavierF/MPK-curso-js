@@ -2,7 +2,7 @@ $('#header').html(`
 <nav class="navbar navbar-expand-sm navbar-dark">
                     <div class="container-fluid">
                         <a class="navbar-brand" href="#">
-                            <img width="30" height="30" alt="" src="../img/MPK_cara_02.svg" alt="Muy Pro Kids" />
+                            <img width="30" height="30" alt="" src="/img/MPK_cara_02.svg" alt="Muy Pro Kids" />
                         </a>
                         <button
                             class="navbar-toggler"
@@ -17,8 +17,8 @@ $('#header').html(`
                         </button>
 
                         <div class="collapse navbar-collapse header__menu" id="navbarNav">
-                            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                                <li class="nav-item"><a class="nav-link text-light" href="../index.html">Inicio</a></li>
+                            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
+                                <li class="nav-item"><a class="nav-link text-light" href="/index.html">Inicio</a></li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Actividades</a>
                                     <!-- contiene los enlaces a los diferentes artículos dentro de la otra pagina -->
@@ -38,17 +38,17 @@ $('#header').html(`
                                     </ul>
                                 </li>
 
-                                <li class="nav-item"><a class="nav-link text-light" href="./web-construccion.html">Contacto</a></li>
-                                <li class="nav-item"><a class="nav-link text-light" href="./web-construccion.html">Sobre Nosotros</a></li>
+                                <li class="nav-item"><a class="nav-link text-light" href="/views/web-construccion.html">Contacto</a></li>
+                                <li class="nav-item"><a class="nav-link text-light" href="/views/web-construccion.html">Sobre Nosotros</a></li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle text-light" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Blog</a>
                                     <!-- tendrá la unica opción de agregar entrada, sin seguridad por ahora-->
-                                    <ul class="dropdown-menu bg_gradient" aria-labelledby="navbarDropdown">
+                                    <ul class="dropdown-menu bg_gradient dropdown-menu-end" aria-labelledby="navbarDropdown">
                                         <li>
-                                            <a class="dropdown-item fs-3 text-light" href="./blog.html">Todos los articulos</a>
+                                            <a class="dropdown-item fs-3 text-light" href="/views/blog.html">Todos los articulos</a>
                                         </li>
                                         <li>
-                                            <a class="dropdown-item fs-3 text-light" href="./nueva_entrada.html">Agregar nuevo</a>
+                                            <a class="dropdown-item fs-3 text-light" href="/views/nueva_entrada.html">Agregar nuevo</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -84,3 +84,11 @@ $('#side-menu').html(`
                                 </ul>
                             </aside>
                             `);
+
+$('#footer').html(`
+<ul class="navbar d-flex justify-content-center">
+<li class="nav-item"><a class="nav-link text-light" href="">Contacto</a></li>
+<li class="nav-item"><a class="nav-link text-light" href="">Partners</a></li>
+<li class="nav-item"><a class="nav-link text-light" href="">Politica de Privacidad</a></li>
+</ul>
+`);

@@ -41,8 +41,8 @@
                             <h3 class="section1__subtitle">Agregando un nuevo artículo de blog usando la plantilla</h3>
                             <div class="mb-5">
                                 <p class="section1__paragraph col-md-9">
-                                    Utiliza las plantillas para crear una nueva entrada. Deberas ingresar los títulos, textos e imágenes (o videos) en los lugares correspondientes y a herramienta
-                                    creará el nuevo artículo listo para publicar.
+                                    Utiliza las plantillas para crear una nueva entrada. Deberas ingresar los datos solicitados a continuación presionar el botón "Crear Nueva", aparecerá un popup que
+                                    pedirá la imagen, la introducción para el card y el cuerpo de la entrada. Luego al presionar el botón "Crear", se creará el nuevo artículo listo para publicar.
                                 </p>
                                 <h3 class="section1__paragraph mb-2">Ejemplo:</h3>
                                 <img src="../img/blog_ejemplo.PNG" alt="Ejemplo de artículo terminado" class="col-12 col-sm-10 col-md-8" />
@@ -99,9 +99,6 @@
                             </div>
                             <!-- prueba de modal -->
 
-                            <!-- Button trigger modal -->
-                            <!-- <button type="button" class="form__button--blog" data-bs-toggle="modal" data-bs-target="#cuerpoArticulo">Launch static backdrop modal</button> -->
-
                             <!-- Modal -->
                             <div class="modal fade" id="cuerpoArticulo" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered">
@@ -114,21 +111,19 @@
                                             <!-- lista de seleccion para el componente del body -->
                                             <form action="" class="section1__form--blog" id="form-articulo-body">
                                                 <fieldset class="container">
-                                                    <div class="mb-4">
-                                                        <label class="form-label" for="elemento">Elemento: </label>
-                                                        <select class="formInput__select" name="elemento" id="elem">
-                                                            <option value="subtitulo">Subtítulo</option>
-                                                            <option value="parrafo">Párrafo</option>
-                                                            <option value="imagen">Imagen</option>
-                                                        </select>
+                                                    <div id="contenido">
+                                                        <label class="form-label" for="img-url">Url de la imagen miniatura</label>
+                                                        <input type="textarea" class="form-control" name="img-url" id="img-url" placeholder="http://ejemplo.img" />
+                                                        <label class="form-label" for="intro">Intro para el blog</label>
+                                                        <input type="textarea" class="formInput__textarea" name="intro" id="intro" placeholder="Max 200 caracteres" />
+                                                        <label class="form-label" for="body">Intro para el blog</label>
+                                                        <input type="textarea" class="formInput__textarea" id="body" placeholder="Agregar body completo" />
                                                     </div>
-                                                    <div id="contenido">aca va el contenido por js</div>
                                                 </fieldset>
                                             </form>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="form__button--blog" data-bs-dismiss="modal">Cerrar</button>
-                                            <button type="button" class="form__button--blog" id="push-body">Agregar Sección</button>
                                             <input class="form__button--blog" type="button" value="Crear" name="" id="btn-Crear" />
                                         </div>
                                     </div>
@@ -143,13 +138,7 @@
         </div>
 
         <!--PIE con información de redes y contacto, disponible en todas las páginas-->
-        <footer class="bg_gradient container-fluid">
-            <ul class="navbar d-flex justify-content-center">
-                <li class="nav-item"><a class="nav-link text-light" href="../contacto.html">Contacto</a></li>
-                <li class="nav-item"><a class="nav-link text-light" href="">Partners</a></li>
-                <li class="nav-item"><a class="nav-link text-light" href="">Politica de Privacidad</a></li>
-            </ul>
-        </footer>
+        <footer class="bg_gradient container-fluid" id="footer"></footer>
         <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
